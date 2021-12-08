@@ -4,6 +4,7 @@ import Shop from './components/shop';
 import Home from './components/home';
 import About from './components/about';
 import Login from './components/login';
+import Item from './components/item';
 import CreateItem from './components/create_item';
 import PrivateRoute from './components/private_route';
 
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/item/:id">
+              <Item />
             </Route>
             <PrivateRoute exact path="/add-item" component={CreateItem}/>
             <Route path="/">

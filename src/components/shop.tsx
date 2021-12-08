@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { item } from "../types";
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 function Shop() {
 
@@ -23,12 +24,12 @@ function Shop() {
         <h1>This is the Shop Page</h1>
         <br/>
         {items.map(item =>
-            <div>
-                <h4 key={item.id}>{item.name}</h4>
-                <br/>
-                <h3>This item has {item.sizes.length} in its sizes array</h3>
-            </div>
-            
+            <Link to={"/item/" + item.id}>
+                <div>
+                    <h4 key={item.id}>{item.name}</h4>
+                    <br/>
+                </div>
+            </Link>
             )}
       </header>
     </div>
